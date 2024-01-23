@@ -5,8 +5,10 @@ export default function createReportObject(employeesList) {
     },
     getNumberOfDepartments: (employeesList) => {
       let count = 0;
-      for (const _ in employeesList) {
-        count += 1;
+      for (const department in employeesList) {
+        if (employeesList.hasOwnProperty(department)) {
+          count += 1;
+        }
       }
       return count;
     },
